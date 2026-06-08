@@ -23,10 +23,16 @@ tratamento as (
          "saidaSuspeitaAltas", "saidaConfirmadaObitos",
           "saidaConfirmadaAltas", _p_usuario, 
           "estadoNotificacao", "municipioNotificacao",
-            coalesce(estado,'Rio Grande do Sul') as estado,
+            
             coalesce(municipio,'Não-Me-Toque') as municipio,
             excluido,  
            _created_at, _updated_at,
+            CASE 
+                WHEN estado IS NULL THEN 'Rio Grande do Sul'
+                WHEN estado = 'GOIAS' THEN 'Goiás'
+                ELSE estado
+            END AS ESTADO,
+            
             CASE 
                 WHEN origem = 'RPA-PR-CURITIBA' THEN 'RPA-PR'
                 WHEN origem = 'RPA-MG-BELO-HORIZONTE' THEN 'RPA-MG'

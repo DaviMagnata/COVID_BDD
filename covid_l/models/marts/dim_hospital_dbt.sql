@@ -6,15 +6,15 @@ WITH base AS (
 
 locais_unicos AS (
     SELECT DISTINCT
-        municipio,
-        'Pernambuco' AS estado,
-        'PE' AS uf,
-        'Nordeste' AS regiao,
-        'Brasil' AS pais
+        cnes,
+        estado,
+        municipio
     FROM base
 )
 
 SELECT
-    ROW_NUMBER() OVER (ORDER BY municipio) AS id_localidade_sk,
+    row_number() over (
+    order by cnes, estado, municipio
+    ) as id_hospital_sk,
     *
 FROM locais_unicos
