@@ -1,0 +1,69 @@
+==================== 2026-06-08T20:59:40.887880Z | 019ea908-b5d5-7d70-bab2-d4017fb281a4 ====================
+20:59:40.888061 [info ]: Installing dbt project and profile setup
+20:59:40.942068 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+20:59:40.943052 [info ]: Success Project created successfully!
+20:59:40.943322 [info ]: Info Project name: jaffle_shop
+20:59:40.943516 [info ]: Info Project directory: jaffle_shop
+20:59:40.943787 [info ]: Info Setting up your profile...
+20:59:40.944643 [info ]: Loading ~/.dbt/profiles.yml
+20:59:40.946572 [info ]: Info Creating new profile...
+20:59:44.043577 [info ]: No dbt_cloud.yml found - proceeding without cloud pre-population
+21:00:13.200257 [info ]: Info Backup created at C:\Users\Davi2\.dbt\profiles.yml.bkp
+21:00:13.202728 [info ]: Success Profile written to C:\Users\Davi2\.dbt\profiles.yml
+21:00:13.203555 [info ]: Validating profile inputs, adapters, and connection
+
+21:00:13.204084 [info ]: dbt-core 2.0.0-alpha.1
+21:00:13.206276 [info ]: Started loading project
+21:00:13.208937 [info ]: Loading ~/.dbt/profiles.yml
+21:00:13.215746 [info ]: Finished loading project [  0.01s]
+21:00:13.216000 [error]: [InvalidConfig (dbt1005)]: The 'postgres' adapter is not yet supported by dbt Fusion. Supported adapters: snowflake, bigquery, databricks, redshift
+21:00:13.365902 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' with 1 error [32.5s]
+[0m18:04:28.592153 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029F70F90E50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029F70F87210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029F70F86350>]}
+
+
+============================== 18:04:28.597095 | 9d836b16-b4f8-4506-a388-2cd766884c75 ==============================
+[0m18:04:28.597095 [info ] [MainThread]: Running with dbt=1.7.9
+[0m18:04:28.597095 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\Davi2\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt init covid_l', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m18:04:28.597095 [debug] [MainThread]: Starter project path: C:\Users\Davi2\AppData\Local\Programs\Python\Python311\Lib\site-packages\dbt\include\starter_project
+[0m18:04:28.658591 [info ] [MainThread]: 
+Your new dbt project "covid_l" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m18:04:28.659100 [info ] [MainThread]: Setting up your profile.
+[0m18:04:46.655501 [info ] [MainThread]: Profile covid_l written to C:\Users\Davi2\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m18:04:46.664141 [debug] [MainThread]: Command `dbt init` succeeded at 18:04:46.662883 after 18.13 seconds
+[0m18:04:46.664678 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029F70A71E10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029F70ED7A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000029F7038B7D0>]}
+[0m18:04:46.664678 [debug] [MainThread]: Flushing usage events
+[0m18:04:53.807483 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014D766767D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014D76673450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014D76670190>]}
+
+
+============================== 18:04:53.810525 | a7ddd04c-648e-45b4-b392-dea3036073e0 ==============================
+[0m18:04:53.810525 [info ] [MainThread]: Running with dbt=1.7.9
+[0m18:04:53.810525 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Davi2\\.dbt', 'invocation_command': 'dbt debug', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m18:04:53.810525 [info ] [MainThread]: dbt version: 1.7.9
+[0m18:04:53.810525 [info ] [MainThread]: python version: 3.11.9
+[0m18:04:53.810525 [info ] [MainThread]: python path: C:\Users\Davi2\AppData\Local\Programs\Python\Python311\python.exe
+[0m18:04:53.810525 [info ] [MainThread]: os info: Windows-10-10.0.26200-SP0
+[0m18:04:53.898125 [info ] [MainThread]: Using profiles dir at C:\Users\Davi2\.dbt
+[0m18:04:53.898125 [info ] [MainThread]: Using profiles.yml file at C:\Users\Davi2\.dbt\profiles.yml
+[0m18:04:53.898125 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\Davi2\Desktop\COVID_BDD\dbt_project.yml
+[0m18:04:53.898125 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m18:04:53.898125 [debug] [MainThread]: Command `dbt debug` failed at 18:04:53.898125 after 0.16 seconds
+[0m18:04:53.903207 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014D765C05D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014D6FA96A50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014D766C9090>]}
+[0m18:04:53.903207 [debug] [MainThread]: Flushing usage events
