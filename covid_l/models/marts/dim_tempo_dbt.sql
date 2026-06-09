@@ -12,6 +12,10 @@ SELECT
     ROW_NUMBER() OVER (
         ORDER BY data_notificacao, created_at, updated_at
     ) AS id_tempo_sk,
+    data_notificacao,
+    created_at,
+    updated_at,
+
 
     EXTRACT(YEAR FROM data_notificacao) AS ano_origem,
     EXTRACT(DAY FROM data_notificacao) AS dia_notificacao,
