@@ -13,7 +13,7 @@ tratamento as (
 
     select
          _id, "dataNotificacao", 
-         cnes, 
+         
         --Calcula a coluna de ocupacaoo covid
         coalesce("ocupacaoCovidCli",("ocupacaoSuspeitoCli" + "ocupacaoConfirmadoCli" )) as ocupacaoCovidCli,
         coalesce("ocupacaoCovidUti",("ocupacaoSuspeitoUti" + "ocupacaoConfirmadoUti" )) as ocupacaoCovidUti,
@@ -28,7 +28,12 @@ tratamento as (
             coalesce(municipio,'Não-Me-Toque') as municipio,
             excluido,  
            _created_at, _updated_at,
-            
+            CASE 
+                WHEN cnes ~ '^[0-9]+$' THEN cnes::bigint
+                ELSE NULL
+            END AS cnes,
+
+
             --Corrigindo tanto o caso de Null, quanto GOIAS em estado
             CASE 
                 WHEN estado IS NULL THEN 'Rio Grande do Sul'
@@ -43,13 +48,19 @@ tratamento as (
             END as origem
         
     from stg_covid_mart
-    --Removendo os valores nulos
-    WHERE cnes is not NULL AND 
-    "saidaConfirmadaObitos" IS NOT NULL AND
-    "saidaConfirmadaAltas" IS NOT NULL AND 
-    "saidaSuspeitaObitos" IS NOT NULL AND
-    "saidaSuspeitaObitos" IS NOT NULL
+   
 
+),
+
+filtrado AS (
+    SELECT *
+    FROM tratamento
+    WHERE cnes IS NOT NULL
+      AND "saidaConfirmadaObitos" IS NOT NULL
+      AND "saidaConfirmadaAltas" IS NOT NULL
+      AND "saidaSuspeitaObitos" IS NOT NULL
+      AND "saidaSuspeitaAltas" IS NOT NULL
 )
-select *
-from tratamento
+
+SELECT *
+FROM filtrado
